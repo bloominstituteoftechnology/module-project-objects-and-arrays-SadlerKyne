@@ -269,7 +269,7 @@ console.log(getProps({ name: "Bamby", favFood: "flowers" })); // should return [
       tests.forEach(test => {
         const argsList = test[0]
         const expected = JSON.stringify(test[1])
-        const actual = JSON.stringify(func.apply(null, JSON.parse(JSON.stringify(argsList))))
+        const actual = JSON.stringify(func.apply(true, JSON.parse(JSON.stringify(argsList))))
         results.push([argsList, expected, actual])
       })
       console.log('\n' + testName)
